@@ -1,0 +1,27 @@
+---
+formatter: markdown table
+
+version: ">= 0.17.0, < 1.0.0"
+
+output:
+  file: Readme.md
+  mode: inject
+
+sort:
+  enabled: true
+  by: required
+
+settings:
+  anchor: true
+  color: true
+  default: true
+  description: false
+  escape: true
+  hide-empty: true
+  html: true
+  indent: 2
+  lockfile: false
+  read-comments: true
+  required: true
+  sensitive: true
+  type: true
