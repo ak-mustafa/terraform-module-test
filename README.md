@@ -18,4 +18,11 @@
 | Name | Type |
 |------|------|
 | [azurerm_resource_group.main](https://registry.terraform.io/providers/hashicorp/azurerm/4.14.0/docs/resources/resource_group) | resource |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| <a name="output_location"></a> [location](#output\_location) | n/a |
+| <a name="output_rg_name"></a> [rg\_name](#output\_rg\_name) | n/a |
 <!-- END_TF_DOCS -->
