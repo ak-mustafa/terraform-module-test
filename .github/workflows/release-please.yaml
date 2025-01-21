@@ -16,7 +16,7 @@ jobs:
         with:
           preset: "conventionalcommits"
           github-token: ${{ secrets.GH_TOKEN }}
-          git-user-email: "akmustafa.tech@gmail.com"
+          git-user-email: akmustafa.tech@gmail.com
           version-file: './version.yml'
 
       - name: create release
