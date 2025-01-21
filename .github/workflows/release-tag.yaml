@@ -35,7 +35,7 @@
 
         - uses: googleapis/release-please-action@v4
           with:
-            token: ${{ secrets.GITHUB_TOKEN }}
+            token: ${{ secrets.GH_TOKEN }}
             release-type: terraform-module
   
         - name: Create skipping comment
