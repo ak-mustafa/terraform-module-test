@@ -1,4 +1,11 @@
-## 0.2.0 (2025-01-21)
+## [0.3.0](https://github.com/ak-mustafa/terraform-module-test/compare/v0.2.0...v0.3.0) (2025-01-21)
+
+
+### Features
+
+* new feauture added ([2e35bbf](https://github.com/ak-mustafa/terraform-module-test/commit/2e35bbfb4f6fe591e206d9fdf419c60ca39d2267))
+
+## [0.2.0](https://github.com/ak-mustafa/terraform-module-test/compare/6168fd7afe20d5253e4a87d0656b77d911cf49e8...v0.2.0) (2025-01-21)
 
 
 ### Features
