@@ -1,3 +1,4 @@
+
 terraform {
   required_version = "1.10.2"
 
@@ -8,6 +9,7 @@ terraform {
     }
   }
 }
+
 
 
 resource "azurerm_resource_group" "main" {
