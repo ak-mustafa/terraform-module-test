@@ -1,31 +1,42 @@
-name: Terraform Module Releaser
-on:
-  pull_request:
-    types: [opened, reopened, synchronize, closed] # Closed required
-    branches:
-      - main
+---
 
-permissions:
-  contents: write # Required for to push tags, create release, and push changes to the wiki
-  pull-requests: write # Required to comment on pull request
-
-jobs:
-  release:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Terraform Module Releaser
-        uses: techpivot/terraform-module-releaser@v1
-        with:
-          major-keywords: major update,breaking change
-          minor-keywords: feat,feature
-          patch-keywords: fix,chore,docs
-          default-first-tag: v1.0.0
-          terraform-docs-version: v0.19.0
-          delete-legacy-tags: true
-          disable-wiki: true
-          wiki-sidebar-changelog-max: 10
-          module-change-exclude-patterns: .gitignore,*.md,*.tftest.hcl,tests/**
-          module-asset-exclude-patterns: .gitignore,*.md,*.tftest.hcl,tests/**
+  ## Make sure you have these labels - the description doesn't matter - and use one of them in your PR to create new release:
+  # gh label create major --description "semver: backwards incompatible changes"
+  # gh label create minor --description "semver: backwards compatible new functionalities"
+  # gh label create patch --description "semver: backwards compatible bug fixes"
+  
+  name: Semantic Versioning
+  
+  on:
+    pull_request:
+      branches: [master, main]
+      types: [closed]
+  
+  jobs:
+    semver-release:
+      runs-on: ubuntu-latest
+      if: github.event.pull_request.merged
+      steps:
+        - name: Create semver tag
+          uses: K-Phoen/semver-release-action@master
+          id: release
+          with:
+            release_branch: ${{ github.event.pull_request.base.ref }}
+            release_strategy: tag
+          env:
+            GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+  
+        - name: Create release comment
+          if: steps.release.outputs.tag != ''
+          uses: peter-evans/create-or-update-comment@v2
+          with:
+            issue-number: ${{ github.event.pull_request.number }}
+            body: "Created semver release: ${{ steps.release.outputs.tag }}"
+  
+        - name: Create skipping comment
+          if: steps.release.outputs.tag == ''
+          uses: peter-evans/create-or-update-comment@v2
+          with:
+            issue-number: ${{ github.event.pull_request.number }}
+            body: "No semver release labels, skipping the release."
+  
