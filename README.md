@@ -24,5 +24,6 @@
 | Name | Description |
 |------|-------------|
 | <a name="output_location"></a> [location](#output\_location) | n/a |
+| <a name="output_name1"></a> [name1](#output\_name1) | n/a |
 | <a name="output_rg_name"></a> [rg\_name](#output\_rg\_name) | n/a |
 <!-- END_TF_DOCS -->
