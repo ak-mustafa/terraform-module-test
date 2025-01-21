@@ -22,7 +22,7 @@
           id: release
           with:
             release_branch: ${{ github.event.pull_request.base.ref }}
-            release_strategy: tag
+            release_strategy: release
           env:
             GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
   
