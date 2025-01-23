@@ -1,3 +1,8 @@
+## [v0.8.0] - 2025-01-23
+### :sparkles: New Features
+- [`c6e6b34`](https://github.com/ak-mustafa/terraform-module-test/commit/c6e6b342431a3096554df00044e0c877281c1c52) - Update main.tf *(commit by [@ak-mustafa](https://github.com/ak-mustafa))*
+
+
 ## [v0.7.0] - 2025-01-21
 ### :sparkles: New Features
 - [`ebe317a`](https://github.com/ak-mustafa/terraform-module-test/commit/ebe317a3ba895858669d98286a759a7c2b60d9c5) - Update main.tf *(commit by [@ak-mustafa](https://github.com/ak-mustafa))*
@@ -44,3 +49,4 @@
 * release 0.2.0 ([075c660](https://github.com/ak-mustafa/terraform-module-test/commit/075c6605e61c30fc705aca1f30fc2c7802e2a9a9))
 [v0.6.0]: https://github.com/ak-mustafa/terraform-module-test/compare/v0.5.0...v0.6.0
 [v0.7.0]: https://github.com/ak-mustafa/terraform-module-test/compare/v0.6.0...v0.7.0
+[v0.8.0]: https://github.com/ak-mustafa/terraform-module-test/compare/v0.7.0...v0.8.0
